@@ -1,0 +1,50 @@
+import Managers.NeroCustomerManager;
+import Managers.StarbucksCustomerManager;
+import Entities.Customer;
+import Verification.MernisVerification;
+
+public class Main
+{
+
+	public static void main(String[] args)
+	{
+		Customer yasin = new Customer();
+		yasin.setId(1);
+		yasin.setFirstName("Yasin");
+		yasin.setLastName("Çiftçi");
+		yasin.setDateOfBirth("2002-10-24");
+		yasin.setNationalityId("12345678910");
+		
+		Customer engin = new Customer();
+		engin.getId();
+		engin.setFirstName("Engin");
+		engin.setLastName("Demiroğ");
+		engin.setDateOfBirth("06.01.1986");
+		engin.setNationalityId("12345678910");
+		
+		
+		NeroCustomerManager neroManager = new NeroCustomerManager(new MernisVerification());
+		
+		neroManager.addCustomer(yasin);
+		neroManager.buyCoffee(yasin);
+		
+		System.out.println();
+		
+		neroManager.addCustomer(engin);
+		neroManager.buyCoffee(engin);
+		
+		System.out.println();
+		System.out.println();
+		
+		StarbucksCustomerManager starbucksManager = new StarbucksCustomerManager();
+		
+		starbucksManager.addCustomer(yasin);
+		starbucksManager.buyCoffee(yasin);
+		
+		System.out.println();
+		
+		starbucksManager.addCustomer(engin);
+		starbucksManager.buyCoffee(engin);
+		
+	}
+}

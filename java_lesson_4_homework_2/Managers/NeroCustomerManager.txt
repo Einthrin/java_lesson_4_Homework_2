@@ -1,0 +1,38 @@
+package Managers;
+
+import Interfaces.BaseManager;
+import Entities.Customer;
+import Verification.MernisVerification;
+import Verification.MernisVerification;
+
+public class NeroCustomerManager implements BaseManager
+{
+
+	
+	final MernisVerification verification;
+	
+	public NeroCustomerManager(MernisVerification verification)
+	{
+		this.verification = verification;
+	}
+	
+	@Override
+	public void addCustomer(Customer customer)
+	{
+		if(verification.verify(customer) == true)
+		{
+			System.out.println("Müşteri Veri Tabanına Kaydedildi : " + customer.getfirstName() + " " + customer.getLastName());
+		}
+		else
+		{
+			System.out.println("Müşteri Veri Tabanına Kaydedilemedi : " + customer.getfirstName() + " " + customer.getLastName());
+		}
+	}
+	
+	@Override
+	public void buyCoffee(Customer customer)
+	{
+		System.out.println("Kahenizi Aldınız " + customer.getfirstName() + " Afiyet Olsun :)");
+	}
+	
+}

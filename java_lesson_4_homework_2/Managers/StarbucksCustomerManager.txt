@@ -1,0 +1,22 @@
+package Managers;
+
+import Interfaces.BaseManager;
+import Entities.Customer;
+
+public class StarbucksCustomerManager implements BaseManager
+{
+
+	
+	@Override
+	public void addCustomer(Customer customer)
+	{
+		System.out.println("Müşteri Veri Tabanına Kaydedildi : " + customer.getfirstName() + " " + customer.getLastName());
+	}
+
+	@Override
+	public void buyCoffee(Customer customer)
+	{
+		System.out.println("Kahveniz Başarıyla Alındı Ve Yıldızınız Eklendi " + customer.getfirstName());	
+	}
+	
+}

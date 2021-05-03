@@ -1,0 +1,19 @@
+package Verification;
+
+import Interfaces.BaseVerification;
+import Entities.Customer;
+
+public class MernisVerification implements BaseVerification
+{
+
+	@Override
+	public boolean verify(Customer customer)
+	{
+		if(customer.getNationalityId().length() == 11 )
+		{
+			return true;
+		}
+		return false;
+	}
+
+}

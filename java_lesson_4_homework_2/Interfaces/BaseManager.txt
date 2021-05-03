@@ -1,0 +1,9 @@
+package Interfaces;
+
+import Entities.Customer;
+
+public interface BaseManager
+{
+	void addCustomer(Customer customer);
+	void buyCoffee(Customer customer);
+}
